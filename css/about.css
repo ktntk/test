@@ -1,0 +1,712 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colors to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colors to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border color to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #1D4763;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+}
+
+a {
+  list-style: none;
+  color: #1D4763;
+  text-decoration: none;
+}
+
+ol {
+  list-style: none;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 5%;
+}
+
+.zoomIn {
+  animation-name: zoomInAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnime {
+  from {
+    transform: scale(0.6);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.fadeUp {
+  opacity: 0;
+  animation-name: fadeUpAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeUpTrigger {
+  opacity: 0;
+}
+
+#splash {
+  /*fixedで全面に固定*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: #ffffff;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+  transform: scaleY(1);
+  width: 100%;
+  height: 50%;
+  background-color: #1D4763;
+  transition: all 1s cubic-bezier(0.04, 0.435, 0.315, 0.9);
+}
+
+/*上の画面*/
+.loader_cover-up {
+  transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom;
+}
+
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+  transform: scaleY(0);
+}
+
+.page_img {
+  width: 100%;
+  height: 80vh;
+}
+
+.breadcrumbs {
+  position: absolute;
+  display: flex;
+  top: 12%;
+  left: 6%;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .breadcrumbs {
+    top: 9%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .breadcrumbs {
+    top: 8%;
+    font-size: 10px;
+  }
+}
+.breadcrumbs a {
+  font-family: "Book Antiqua";
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+.page_ttl {
+  position: absolute;
+  top: 40%;
+  left: 6%;
+  color: #ffffff;
+  font-size: 3rem;
+  font-family: "Book Antiqua";
+}
+@media screen and (max-width: 768px) {
+  .page_ttl {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page_ttl {
+    font-size: 1.5rem;
+  }
+}
+
+.section_ttl {
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  border-bottom: solid 3px;
+  font-size: 2rem;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .section_ttl {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section_ttl {
+    font-size: 1rem;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 99;
+  height: auto;
+  background-color: #1D4763;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2%;
+}
+
+.header_logo {
+  width: 25%;
+  height: auto;
+  margin-top: 8px;
+}
+@media screen and (max-width: 480px) {
+  .header_logo {
+    width: 50%;
+  }
+}
+
+.header_nav {
+  width: 70%;
+}
+
+.header_nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header_nav ul li {
+  padding: 0 2.5%;
+  border-right: solid 2px #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .header_nav ul li {
+    font-size: 12px;
+  }
+}
+
+.header_nav ul li:last-child {
+  border-right: none;
+}
+
+.header_nav ul li a {
+  color: #ffffff;
+  font-family: "Book Antiqua";
+}
+
+.header_nav ul li a:hover {
+  opacity: 0.8;
+  color: #5FC1C7;
+}
+
+header .drawer {
+  visibility: hidden;
+}
+
+footer {
+  background-color: #1D4763;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    font-size: 13px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 5%;
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 5%;
+  }
+}
+
+.footer_left {
+  width: 45%;
+  margin-top: 2%;
+}
+@media screen and (max-width: 480px) {
+  .footer_left {
+    width: 80%;
+  }
+}
+.footer_left img {
+  width: 45%;
+  margin-bottom: 2%;
+}
+@media screen and (max-width: 768px) {
+  .footer_left img {
+    width: 70%;
+  }
+}
+.footer_left p {
+  margin-left: 15%;
+  line-height: 2;
+}
+@media screen and (max-width: 480px) {
+  .footer_left p {
+    margin-left: 0;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+}
+
+.footer_list {
+  display: flex;
+  width: 36%;
+  margin-top: 2%;
+  line-height: 3;
+  font-family: "Book Antiqua";
+}
+@media screen and (max-width: 768px) {
+  .footer_list {
+    width: 43%;
+    margin-top: 5%;
+    line-height: 2;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer_list {
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    font-size: 10px;
+    line-height: 2;
+  }
+}
+.footer_list ul {
+  width: 100%;
+  margin-right: 15%;
+}
+@media screen and (max-width: 768px) {
+  .footer_list ul {
+    margin-right: 0;
+  }
+}
+.footer_list ul li a {
+  color: #ffffff;
+}
+
+.copyright {
+  padding: 1%;
+  font-weight: lighter;
+  font-size: 12px;
+  font-family: "Book Antiqua";
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .copyright {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header .drawer {
+    visibility: visible;
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    z-index: 100;
+    width: 24px;
+    border-top: solid 4px #ffffff;
+    cursor: pointer;
+  }
+  header .drawer::before, header .drawer::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 4px;
+    background: #ffffff;
+    content: "";
+    transition: all 0.5s;
+  }
+  header .drawer::before {
+    top: 6px;
+  }
+  header .drawer::after {
+    top: 15px;
+  }
+  header .header_nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: #1D4763;
+  }
+  header .header_nav ul {
+    display: block;
+    margin: 50% 0;
+  }
+  header .header_nav ul li {
+    margin: 5% auto;
+    border-right: unset;
+  }
+  header .header_nav ul li a {
+    font-size: 1.75rem;
+    line-height: 3;
+  }
+  body.nav-open header .drawer {
+    border-top: 0;
+  }
+  body.nav-open header .drawer::before {
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+  body.nav-open header .drawer::after {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .breadcrumb_item {
+    font-size: 12px;
+  }
+}
+#history {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  #history {
+    width: 100%;
+  }
+}
+
+.history_list {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+@media screen and (max-width: 480px) {
+  .history_list {
+    width: 85%;
+  }
+}
+.history_list th {
+  width: 30%;
+  padding: 1%;
+  border: solid 1px #DADADA;
+  background-color: #1D4763;
+  color: #ffffff;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+@media screen and (max-width: 768px) {
+  .history_list th {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .history_list th {
+    font-size: 10px;
+  }
+}
+.history_list td {
+  padding: 0 4%;
+  border: solid 1px #DADADA;
+  vertical-align: middle;
+}
+@media screen and (max-width: 768px) {
+  .history_list td {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .history_list td {
+    font-size: 12px;
+  }
+}
+
+#company {
+  width: 70%;
+  margin-bottom: 10%;
+}
+@media screen and (max-width: 480px) {
+  #company {
+    width: 85%;
+  }
+}
+
+dt {
+  float: left;
+  width: 30%;
+  margin: 2% 0 0 5%;
+  padding-left: 3%;
+  font-weight: bold;
+}
+@media screen and (max-width: 480px) {
+  dt {
+    width: 25%;
+    margin-left: 0;
+  }
+}
+
+dd {
+  padding: 2%;
+  border-bottom: solid 1px #1D4763;
+  text-align: start;
+}
+@media screen and (max-width: 480px) {
+  dd {
+    font-size: 10px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 50vh;
+  margin-bottom: -6%;
+}
+@media screen and (max-width: 768px) {
+  .map {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .map {
+    height: 40vh;
+  }
+}

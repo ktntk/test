@@ -1,0 +1,60 @@
+@use "foundation";
+@use "global" as *;
+
+#news {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 5%;
+
+@include tab {
+		width: 80%;
+	}
+
+@include sp {
+		width: 85%;
+	}
+}
+
+dl {
+	display: block;
+}
+
+dt {
+	float: left;
+	width: 30%;
+	margin: 3% 0 0 5%;
+	padding-left: 3%;
+	border-left: solid 3px $cLightBlue;
+	font-weight: 500;
+
+@include sp {
+		float: none;
+		width: 100%;
+	}
+}
+
+dd {
+	padding: 3%;
+	border-bottom: solid 1px $cDarkBlue;
+	text-align: start;
+
+@include sp {
+		padding-left: 10%;
+	}
+}
+
+.page_number {
+	display: flex;
+	justify-content: space-between;
+	width: 15%;
+	margin: 10% auto;
+
+@include sp {
+		width: 30%;
+	}
+	.main {
+		padding: 0 7%;
+		background-color: $cDarkBlue;
+		color: $cWhite;
+	}
+}

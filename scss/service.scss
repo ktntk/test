@@ -1,0 +1,237 @@
+@use "foundation";
+@use "global" as *;
+
+.service {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin-bottom: 10%;
+
+@include sp {
+		display: block;
+	}
+}
+
+.service_left {
+	width: 40%;
+	padding: 2% 5%;
+
+@include sp {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 5%;
+	}
+	h3 {
+		font-size: 2rem;
+		text-align: center;
+
+@include sp {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.service_right {
+	width: 40%;
+	padding: 2% 5%;
+	background-color: $cDarkBlue;
+	color: $cWhite;
+
+@include sp {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 5%;
+	}
+	h4 {
+		font-size: 2rem;
+		text-align: center;
+
+@include sp {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.service_icon {
+	width: 50%;
+	margin: 0 auto;
+	padding: 3%;
+}
+// 開発・運用=============================================================
+.step_box_above {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 0 auto;
+
+@include tab {
+		width: 100%;
+	}
+
+@include sp {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
+
+.step_box_below {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 5% auto 8%;
+
+@include tab {
+		width: 100%;
+	}
+
+@include sp {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
+
+.box_shadow {
+	width: 25%;
+@include tab {
+		width: 25%;
+	}
+
+@include sp {
+		width: 50%;
+		width: calc(50% - 22px);
+		margin: 1px;
+		padding: 10px;
+	}
+
+	filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+// step1ボックス---------------------------------
+.step_box_first {
+	clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 0 50%, 0% 0%);
+	background-color: $cLightBlue;
+	p {
+		margin-right: 5%;
+		padding: 4%;
+		color: $cBlack;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		text-align: center;
+
+@include tab {
+			font-size: 14px;
+		}
+	}
+}
+
+// step2～7ボックス------------------------------
+.step_box {
+	clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+	background-color: $cLightBlue;
+	p {
+		padding: 4%;
+		color: $cBlack;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		text-align: center;
+
+@include tab {
+			font-size: 14px;
+		}
+	}
+}
+
+// step8ボックス--------------------------------
+.step_box_last {
+	clip-path: polygon(90% 1%, 90% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+	background-color: $cLightBlue;
+
+@include sp {
+		clip-path: polygon(95% 1%, 95% 50%, 95% 100%, 0% 100%, 10% 50%, 0% 0%);
+	}
+	p {
+		margin-right: 5%;
+		padding: 4%;
+		color: $cBlack;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		text-align: center;
+
+@include tab {
+			font-size: 14px;
+		}
+	}
+}
+
+// 事例紹介=====================================================
+.case1 {
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+	margin-bottom: 5%;
+
+@include tab {
+		width: 80%;
+	}
+
+@include sp {
+		flex-direction: column;
+		width: 90%;
+	}
+}
+
+.case2 {
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+	margin-bottom: 5%;
+
+@include tab {
+		width: 80%;
+	}
+
+@include sp {
+		display: none;
+	}
+}
+
+.case_list {
+	width: 30%;
+
+@include sp {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+.case_ttl {
+	font-weight: bold;
+}
+
+.case_txt {
+	margin-top: 3%;
+	line-height: 1.4;
+
+@include sp {
+		margin-bottom: 10%;
+	}
+}
+
+// アニメーション==============================================
+.fadeUp {
+	animation-name: fadeUpAnime;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeUpAnime {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

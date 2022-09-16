@@ -1,0 +1,449 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+// 全体に対して======================================================
+html {
+	font-size: 100%;
+}
+
+body {
+	color: $cDarkBlue;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: $fNotoSansJP;
+	letter-spacing: 1px;
+	word-break: break-all;
+
+@include tab {
+		font-size: 14px;
+	}
+
+@include sp {
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+}
+
+a {
+	list-style: none;
+	color: $cDarkBlue;
+	text-decoration: none;
+}
+
+ol{
+	list-style: none;
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+main {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.inner {
+	width: 90%;
+	margin: 0 auto;
+}
+
+section {
+	margin-bottom: 5%;
+}
+
+// アニメーション====================================================
+
+// 拡大-------------------------------
+.zoomIn {
+	animation-name: zoomInAnime;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnime {
+	from {
+		transform: scale(0.6);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+// 下から上--------------------------
+.fadeUp {
+	opacity: 0;
+	animation-name: fadeUpAnime;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeUpAnime {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+//スクロールをしたら出現---------------
+.fadeUpTrigger {
+	opacity: 0;
+}
+
+// ローディングアニメーション======================================
+#splash {
+	/*fixedで全面に固定*/
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	color: $cWhite;
+	text-align: center;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	color: $cWhite;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+	transform: scaleY(1);
+	width: 100%;
+	height: 50%;
+	background-color: $cDarkBlue;
+	transition: all 1s cubic-bezier(0.04, 0.435, 0.315, 0.9);
+}
+
+/*上の画面*/
+.loader_cover-up {
+	transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+	position: absolute;
+	bottom: 0;
+	transform-origin: center bottom;
+}
+
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+	transform: scaleY(0);
+}
+
+// ページトップ画像＆文字=======================================
+.page_img {
+	width: 100%;
+	height: 80vh;
+}
+
+.breadcrumbs{
+	position: absolute;
+	display: flex;
+	top: 12%;
+	left: 6%;
+	color: $cWhite;
+	@include tab{
+		top: 9%;
+	}
+	@include sp{
+		top: 8%;
+		font-size: 10px;
+	}
+	a{
+		font-family: $fBookAntiqua;
+		color: $cWhite;
+		font-weight: lighter;
+	}
+}
+
+.page_ttl {
+	position: absolute;
+	top: 40%;
+	left: 6%;
+	color: $cWhite;
+	font-size: 3rem;
+	font-family: $fBookAntiqua;
+
+@include tab {
+		font-size: 2rem;
+	}
+
+@include sp {
+		font-size: 1.5rem;
+	}
+}
+
+// 見出し=====================================================
+.section_ttl {
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: 5%;
+	border-bottom: solid 3px;
+	font-size: 2rem;
+	text-align: center;
+
+@include tab {
+		width: 50%;
+		font-size: 1.5rem;
+	}
+
+@include sp {
+		font-size: 1rem;
+	}
+}
+
+// ヘッダー===================================================
+header {
+	position: fixed;
+	z-index: 99;
+	height: auto;
+	background-color: $cDarkBlue;
+}
+
+.header_inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2%;
+}
+
+.header_logo {
+	width: 25%;
+	height: auto;
+	margin-top: 8px;
+
+@include sp {
+		width: 50%;
+	}
+}
+
+.header_nav {
+	width: 70%;
+}
+
+.header_nav ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.header_nav ul li {
+	padding: 0 2.5%;
+	border-right: solid 2px $cWhite;
+	font-size: 16px;
+	text-align: center;
+
+@include tab {
+		font-size: 12px;
+	}
+}
+
+.header_nav ul li:last-child {
+	border-right: none;
+}
+
+.header_nav ul li a {
+	color: $cWhite;
+	font-family: $fBookAntiqua;
+}
+
+.header_nav ul li a:hover {
+	opacity: 0.8;
+	color: $cLightBlue;
+}
+
+header .drawer {
+	visibility: hidden;
+}
+
+// フッター=====================================================
+footer {
+	background-color: $cDarkBlue;
+	color: $cWhite;
+
+@include tab {
+		font-size: 13px;
+	}
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 1% 5%;
+
+@include sp {
+		padding: 5%;
+	}
+}
+
+.footer_left {
+	width: 45%;
+	margin-top: 2%;
+
+@include sp {
+		width: 80%;
+	}
+	img {
+		width: 45%;
+		margin-bottom: 2%;
+
+@include tab {
+			width: 70%;
+		}
+	}
+	p {
+		margin-left: 15%;
+		line-height: 2;
+
+@include sp {
+			margin-left: 0;
+			font-size: 10px;
+			letter-spacing: 0;
+		}
+	}
+}
+
+.footer_list {
+	display: flex;
+	width: 36%;
+	margin-top: 2%;
+	line-height: 3;
+	font-family: $fBookAntiqua;
+
+@include tab {
+		width: 43%;
+		margin-top: 5%;
+		line-height: 2;
+	}
+
+@include sp {
+		flex-direction: column;
+		justify-content: center;
+		width: 30%;
+		font-size: 10px;
+		line-height: 2;
+	}
+	ul {
+		width: 100%;
+		margin-right: 15%;
+
+@include tab {
+			margin-right: 0;
+		}
+		li a {
+			color: $cWhite;
+		}
+	}
+}
+
+.copyright {
+	padding: 1%;
+	font-weight: lighter;
+	font-size: 12px;
+	font-family: $fBookAntiqua;
+	text-align: center;
+
+@include sp {
+		font-size: 8px;
+	}
+}
+
+// ハンバーガーメニュー===========================================
+@include sp {
+	header .drawer {
+		visibility: visible;
+		position: absolute;
+		top: 25%;
+		right: 15px;
+		z-index: 100;
+		width: 24px;
+		border-top: solid 4px $cWhite;
+		cursor: pointer;
+	}
+
+	header .drawer::before, header .drawer::after {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 24px;
+		height: 4px;
+		background: $cWhite;
+		content: "";
+		transition: all 0.5s;
+	}
+
+	header .drawer::before {
+		top: 6px;
+	}
+
+	header .drawer::after {
+		top: 15px;
+	}
+
+	header .header_nav {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+		background: $cDarkBlue;
+	}
+
+	header .header_nav ul {
+		display: block;
+		margin: 50% 0;
+	}
+
+	header .header_nav ul li {
+		margin: 5% auto;
+		border-right: unset;
+	}
+
+	header .header_nav ul li a {
+		font-size: 1.75rem;
+		line-height: 3;
+	}
+
+	body.nav-open header .drawer {
+		border-top: 0;
+	}
+
+	body.nav-open header .drawer::before {
+		top: 9px;
+		transform: rotate(-45deg);
+	}
+
+	body.nav-open header .drawer::after {
+		top: 9px;
+		transform: rotate(45deg);
+	}
+
+	.breadcrumb_item {
+		font-size: 12px;
+	}
+}
+// ===========================================================

@@ -1,0 +1,95 @@
+@use "foundation";
+@use "global" as *;
+
+#contact {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.contact_form {
+	margin-top: 10%;
+	@include sp {
+		margin: 0 auto;
+	}
+}
+
+.contact_box {
+	display: flex;
+	align-items: center;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 5%;
+	@include tab {
+		width: 85%;
+	}
+}
+
+.contact_box, .contact_area {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	@include sp {
+		flex-direction: column;
+	}
+}
+
+.contact_form_ttl {
+	width: 35%;
+	height: 100%;
+	margin-right: 10.5%;
+	font-size: 20px;
+	@include tab {
+		width: 45%;
+		font-size: 18px;
+	}
+	@include sp {
+		width: 100%;
+		font-size: 16px;
+	}
+}
+
+.contact_form_box {
+	width: 80%;
+	height: 3vh;
+	padding: 5px;
+	border: 1px solid $cDarkBlue;
+	@include sp {
+		width: 90%;
+		height: 2vh;
+	}
+}
+
+.contact_txtarea {
+	width: 80%;
+	height: 18vh;
+	padding: 1%;
+	border: 1px solid $cDarkBlue;
+	font-size: 18px;
+	@include sp {
+		width: 95%;
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+}
+
+.contact_btn {
+	@include btn;
+	width: 15%;
+	margin-bottom: 5%;
+	font-size: 18px;
+	@include tab {
+		width: 20%;
+	}
+	@include sp {
+		width: 30%;
+		margin: 0 0 10% 33%;
+		font-size: 12px;
+	}
+}
+
+.contact_btn:hover {
+	background-color: $cWhite;
+	color: $cDarkBlue;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
