@@ -21,22 +21,69 @@ $(function () {
 });
 // ===================================================================================
 
-// 下から上のアニメーション============================================================
-function fadeAnime() {
+// アニメーション=====================================================================
+
+// フェードイン
+function fadeIn() {
+  // フェードアップ
   $('.fadeUpTrigger').each(function () {
-    var elemPos = $(this).offset().top - 30;//要素より、30px上の
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    let scroll = $(window).scrollTop();
+    let triTop = $(this).offset().top - 50;
+    let winHeight = $(window).height();
+    if (scroll >= triTop - winHeight) {
       $(this).addClass('fadeUp');
     } else {
       $(this).removeClass('fadeUp');
     }
   });
+  // フェードレフト
+  $('.fadeLeftTrigger').each(function () {
+    let scroll = $(window).scrollTop();
+    let triTop = $(this).offset().top - 50;
+    let winHeight = $(window).height();
+    if (scroll >= triTop - winHeight) {
+      $(this).addClass('fadeLeft');
+    } else {
+      $(this).removeClass('fadeLeft');
+    }
+  });
+  // フェードライト
+  $('.fadeRightTrigger').each(function () {
+    let scroll = $(window).scrollTop();
+    let triTop = $(this).offset().top - 50;
+    let windowHeight = $(window).height();
+    if (scroll >= triTop - windowHeight) {
+      $(this).addClass('fadeRight');
+    } else {
+      $(this).removeClass('fadeRight');
+    }
+  });
+  // フェードダウン
+  $('.fadeDownTrigger').each(function () {
+    let scroll = $(window).scrollTop();
+    let triTop = $(this).offset().top - 50;
+    let windowHeight = $(window).height();
+    if (scroll >= triTop - windowHeight) {
+      $(this).addClass('fadeDown');
+    } else {
+      $(this).removeClass('fadeDown');
+    }
+  });
+  // フェードオン
+  $('.fadeOnTrigger').each(function () {
+    let scroll = $(window).scrollTop();
+    let triTop = $(this).offset().top;
+    let winHeight = $(window).height();
+    if (scroll >= triTop - winHeight) {
+      $(this).addClass('fadeOn');
+    } else {
+      $(this).removeClass('fadeOn');
+    }
+  });
 }
-// 画面をスクロールをしたら動く
+
 $(window).scroll(function () {
-  fadeAnime();
+  fadeIn();
 });
 
 // 順番に表示=========================================================================
