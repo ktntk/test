@@ -7,32 +7,38 @@
 }
 .top_txt {
 	position: absolute;
-	top: 35%;
+	top: 38%;
 	left: 6%;
 	color: $cWhite;
 	font-size: 2rem;
 	letter-spacing: 5px;
-	@include tab {
-		top: 40%;
+	@include tab{
+		top: 38%;
 	}
-	h2 {
-		margin-bottom: 10%;
-		font-size: 3.5rem;
+	@include sp{
+		width: 90%;
+		top: 30%;
+	}
+}
+
+.top_txt h2 {
+		margin-bottom: 5%;
+		font-size: 4rem;
 		@include tab {
-			font-size: 2rem;
+			font-size: 2.4rem;
+		}
+		@include sp {
+			font-size: 2.4rem;
+			font-weight: bold;
+		}
+	p {
+		font-size: 3rem;
+		line-height: 1.5;
+		@include tab {
+			font-size: 2.5rem;
 		}
 		@include sp {
 			font-size: 1.1rem;
-		}
-	}
-	p {
-		font-size: 2.5rem;
-		line-height: 1.5;
-		@include tab {
-			font-size: 1.5rem;
-		}
-		@include sp {
-			font-size: 0.8rem;
 		}
 	}
 }
@@ -40,17 +46,17 @@
 .top_video {
 	max-width: 100%;
 	object-fit: cover;
-	clip-path: polygon(20% 0%, 100% 1%, 100% 100%, 0% 100%);
+	clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
 	position: absolute;
-	top: 20%;
+	top: 18%;
 	right:0;
 	height: 70vh;
 	width: 85vw;
 	overflow: hidden;
 	object-fit: cover;
 	@include sp{
-		top:8%;
-		height: 90vh;
+		top:12%;
+		height: 80vh;
 	}
 }
 
@@ -90,6 +96,7 @@
 
 .about_left, .about_right {
 	width: 50%;
+	margin: auto 0;
 	@include sp {
 		width: 100%;
 	}
@@ -109,9 +116,9 @@
 
 .about_img {
 	display: block;
-	width: 100%;
-	height: 90%;
-	margin-top: -10%;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
 	@include sp {
 		margin-top: 0;
 		margin-bottom: 3%;
@@ -120,10 +127,14 @@
 
 .about_btn {
 	@include btn;
+  padding: 1.5% 8%;
+	margin: 0 0 0 58%;
 	@include tab {
-		width: 30%;
+		width: 15%;
 		font-size: 12px;
 		@include sp {
+			width: 17%;
+			padding: 2% 8%;
 			margin: 0 0 0 35%;
 		}
 	}
@@ -134,6 +145,9 @@
 	background-color: $cWhite;
 	color: $cDarkBlue;
 	transition: all 0.3s ease;
+	a{
+		color: $cDarkBlue;
+	}
 }
 
 
@@ -184,10 +198,12 @@ dd {
 
 .news_btn {
 	@include btn;
-	width: 15%;
+	padding: 1% 5%;
+	margin: 5% 0 0 42%;
 	@include sp {
-		width: 30%;
+		width: 25%;
 		margin: 5% 0 0 35%;
+		padding: 2% 5%;
 	}
 }
 
@@ -196,12 +212,15 @@ dd {
 	background-color: $cWhite;
 	color: $cDarkBlue;
 	transition: all 0.2s ease;
+	a{
+		color:$cDarkBlue
+	}
 }
 
 // serviceセクション===========================================
 .service_section {
 	display: flex;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 	@include sp {
 		display: block;
 	}
@@ -209,6 +228,7 @@ dd {
 
 .service_box1, .service_box2 {
 	width: 50%;
+	margin: auto 0;
 	@include sp {
 		width: 100%;
 	}
@@ -223,7 +243,7 @@ dd {
 
 // 画像--------------------------------
 .service_img_left {
-	clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
 	width: 50%;
 	@include tab {
 		clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
@@ -234,15 +254,17 @@ dd {
 		margin: 0 auto;
 	}
 	img {
+		width: 90%;
 		height: 100%;
+		margin-left: 10%
 	}
 }
 
 .service_img_right {
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+	clip-path: polygon(5% 0, 100% 0, 100% 100%, 15% 100%);
 	width: 50%;
 	@include tab {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+		clip-path: polygon(5% 0, 100% 0, 100% 100%, 30% 100%);
 	}
 	@include sp {
 		clip-path: none;
@@ -250,8 +272,8 @@ dd {
 		margin: 0 auto;
 	}
 	img {
+		width: 90%;
 		height: 100%;
-		margin: 0 auto;
 	}
 }
 
@@ -281,6 +303,14 @@ dd {
 }
 
 // 事例--------------------------------------
+.section_ttl{
+	width: 22%;
+	margin-top: 8%;
+	@include sp{
+		width: 40%;
+	}
+}
+
 .case {
 	display: flex;
 	justify-content: space-between;
@@ -330,10 +360,12 @@ dd {
 
 .service_btn {
 	@include btn;
-	width: 15%;
+	padding: 0.8% 3.5%;
+	margin: 5% 0 0 44%;
 	@include sp {
-		width: 30%;
+		width: 25%;
 		margin: 5% 0 0 35%;
+		padding: 2% 3.5%;
 	}
 }
 
@@ -370,7 +402,6 @@ dd {
 
 .contact_box {
 	display: flex;
-	width: 60%;
 	@include tab {
 		width: 80%;
 	}
@@ -416,13 +447,16 @@ dd {
 	img {
 		width: 20%;
 	}
+	p{
+		margin-bottom: 3%
+	}
 }
 
 .contact_btn {
 	@include btn;
-	width: 60%;
+	padding: 0.5% 10%;
 	margin: 0 auto;
-	margin-top: 2%;
+	margin-top: 1%;
 	border: solid 1px;
 	background-color: $cWhite;
 	color: $cDarkBlue;

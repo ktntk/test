@@ -2,12 +2,8 @@
 
 @mixin btn {
 	display: inline-block;
-	width: 30%;
-	margin: 5% 0 0 42%;
-	padding: 0.7% 3%;
 	background-color: $cDarkBlue;
 	color: $cWhite;
-	font-family: "Book Antiqua";
 	font-family: $fBookAntiqua;
 	letter-spacing: 5px;
 	text-align: center;

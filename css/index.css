@@ -175,7 +175,7 @@ body {
   line-height: 1.5;
   font-family: "Noto Sans JP", sans-serif;
   letter-spacing: 1px;
-  word-break: break-all;
+  word-break: normal;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -221,7 +221,7 @@ main {
 }
 
 section {
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .fadeIn {
@@ -366,6 +366,16 @@ section {
   width: 100%;
   height: 80vh;
 }
+@media screen and (max-width: 768px) {
+  .page_img {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page_img {
+    height: 30vh;
+  }
+}
 
 .breadcrumbs {
   position: absolute;
@@ -376,12 +386,12 @@ section {
 }
 @media screen and (max-width: 768px) {
   .breadcrumbs {
-    top: 9%;
+    top: 7%;
   }
 }
 @media screen and (max-width: 480px) {
   .breadcrumbs {
-    top: 8%;
+    top: 7%;
     font-size: 10px;
   }
 }
@@ -402,16 +412,18 @@ section {
 @media screen and (max-width: 768px) {
   .page_ttl {
     font-size: 2rem;
+    top: 20%;
   }
 }
 @media screen and (max-width: 480px) {
   .page_ttl {
     font-size: 1.5rem;
+    top: 15%;
   }
 }
 
 .section_ttl {
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   margin-bottom: 5%;
   border-bottom: solid 3px;
@@ -624,7 +636,11 @@ footer {
     top: 15px;
   }
   header .header_nav {
+    position: relative;
     display: none;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -634,8 +650,12 @@ footer {
     background: #1D4763;
   }
   header .header_nav ul {
+    width: 100%;
     display: block;
-    margin: 50% 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   header .header_nav ul li {
     margin: 5% auto;
@@ -667,7 +687,7 @@ footer {
 
 .top_txt {
   position: absolute;
-  top: 35%;
+  top: 38%;
   left: 6%;
   color: #ffffff;
   font-size: 2rem;
@@ -675,44 +695,52 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .top_txt {
-    top: 40%;
+    top: 38%;
   }
 }
+@media screen and (max-width: 480px) {
+  .top_txt {
+    width: 90%;
+    top: 30%;
+  }
+}
+
 .top_txt h2 {
-  margin-bottom: 10%;
-  font-size: 3.5rem;
+  margin-bottom: 5%;
+  font-size: 4rem;
 }
 @media screen and (max-width: 768px) {
   .top_txt h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 480px) {
   .top_txt h2 {
-    font-size: 1.1rem;
+    font-size: 2.4rem;
+    font-weight: bold;
   }
 }
-.top_txt p {
-  font-size: 2.5rem;
+.top_txt h2 p {
+  font-size: 3rem;
   line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
-  .top_txt p {
-    font-size: 1.5rem;
+  .top_txt h2 p {
+    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 480px) {
-  .top_txt p {
-    font-size: 0.8rem;
+  .top_txt h2 p {
+    font-size: 1.1rem;
   }
 }
 
 .top_video {
   max-width: 100%;
   object-fit: cover;
-  clip-path: polygon(20% 0%, 100% 1%, 100% 100%, 0% 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   position: absolute;
-  top: 20%;
+  top: 18%;
   right: 0;
   height: 70vh;
   width: 85vw;
@@ -721,8 +749,8 @@ footer {
 }
 @media screen and (max-width: 480px) {
   .top_video {
-    top: 8%;
-    height: 90vh;
+    top: 12%;
+    height: 80vh;
   }
 }
 
@@ -764,6 +792,7 @@ footer {
 
 .about_left, .about_right {
   width: 50%;
+  margin: auto 0;
 }
 @media screen and (max-width: 480px) {
   .about_left, .about_right {
@@ -789,9 +818,9 @@ footer {
 
 .about_img {
   display: block;
-  width: 100%;
-  height: 90%;
-  margin-top: -10%;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
 @media screen and (max-width: 480px) {
   .about_img {
@@ -802,24 +831,24 @@ footer {
 
 .about_btn {
   display: inline-block;
-  width: 30%;
-  margin: 5% 0 0 42%;
-  padding: 0.7% 3%;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
-  font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
+  padding: 1.5% 8%;
+  margin: 0 0 0 58%;
 }
 @media screen and (max-width: 768px) {
   .about_btn {
-    width: 30%;
+    width: 15%;
     font-size: 12px;
   }
 }
 @media screen and (max-width: 768px) and (max-width: 480px) {
   .about_btn {
+    width: 17%;
+    padding: 2% 8%;
     margin: 0 0 0 35%;
   }
 }
@@ -829,6 +858,9 @@ footer {
   background-color: #ffffff;
   color: #1D4763;
   transition: all 0.3s ease;
+}
+.about_btn:hover a {
+  color: #1D4763;
 }
 
 #news {
@@ -884,21 +916,19 @@ dd {
 
 .news_btn {
   display: inline-block;
-  width: 30%;
-  margin: 5% 0 0 42%;
-  padding: 0.7% 3%;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
-  font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
-  width: 15%;
+  padding: 1% 5%;
+  margin: 5% 0 0 42%;
 }
 @media screen and (max-width: 480px) {
   .news_btn {
-    width: 30%;
+    width: 25%;
     margin: 5% 0 0 35%;
+    padding: 2% 5%;
   }
 }
 
@@ -908,10 +938,13 @@ dd {
   color: #1D4763;
   transition: all 0.2s ease;
 }
+.news_btn:hover a {
+  color: #1D4763;
+}
 
 .service_section {
   display: flex;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 @media screen and (max-width: 480px) {
   .service_section {
@@ -921,6 +954,7 @@ dd {
 
 .service_box1, .service_box2 {
   width: 50%;
+  margin: auto 0;
 }
 @media screen and (max-width: 480px) {
   .service_box1, .service_box2 {
@@ -936,7 +970,7 @@ dd {
 }
 
 .service_img_left {
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
   width: 50%;
 }
 @media screen and (max-width: 768px) {
@@ -952,16 +986,18 @@ dd {
   }
 }
 .service_img_left img {
+  width: 90%;
   height: 100%;
+  margin-left: 10%;
 }
 
 .service_img_right {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 15% 100%);
   width: 50%;
 }
 @media screen and (max-width: 768px) {
   .service_img_right {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 30% 100%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -972,8 +1008,8 @@ dd {
   }
 }
 .service_img_right img {
+  width: 90%;
   height: 100%;
-  margin: 0 auto;
 }
 
 .service_ttl {
@@ -1003,6 +1039,16 @@ dd {
 @media screen and (max-width: 768px) {
   .service_txt {
     line-height: 1.5;
+  }
+}
+
+.section_ttl {
+  width: 22%;
+  margin-top: 8%;
+}
+@media screen and (max-width: 480px) {
+  .section_ttl {
+    width: 40%;
   }
 }
 
@@ -1071,21 +1117,19 @@ dd {
 
 .service_btn {
   display: inline-block;
-  width: 30%;
-  margin: 5% 0 0 42%;
-  padding: 0.7% 3%;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
-  font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
-  width: 15%;
+  padding: 0.8% 3.5%;
+  margin: 5% 0 0 44%;
 }
 @media screen and (max-width: 480px) {
   .service_btn {
-    width: 30%;
+    width: 25%;
     margin: 5% 0 0 35%;
+    padding: 2% 3.5%;
   }
 }
 
@@ -1124,7 +1168,6 @@ dd {
 
 .contact_box {
   display: flex;
-  width: 60%;
 }
 @media screen and (max-width: 768px) {
   .contact_box {
@@ -1183,21 +1226,20 @@ dd {
 .contact_mail img {
   width: 20%;
 }
+.contact_mail p {
+  margin-bottom: 3%;
+}
 
 .contact_btn {
   display: inline-block;
-  width: 30%;
-  margin: 5% 0 0 42%;
-  padding: 0.7% 3%;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
-  font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
-  width: 60%;
+  padding: 0.5% 10%;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 1%;
   border: solid 1px;
   background-color: #ffffff;
   color: #1D4763;
