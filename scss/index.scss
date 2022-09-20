@@ -256,7 +256,11 @@ dd {
 	img {
 		width: 90%;
 		height: 100%;
-		margin-left: 10%
+		margin-left: 10%;
+		@include sp{
+			width: 100%;
+			margin-left: 0;
+		}
 	}
 }
 
@@ -274,6 +278,10 @@ dd {
 	img {
 		width: 90%;
 		height: 100%;
+		@include sp {
+			width: 100%;
+			margin-left: 0;
+		}
 	}
 }
 

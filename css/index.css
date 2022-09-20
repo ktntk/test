@@ -998,6 +998,12 @@ dd {
   height: 100%;
   margin-left: 10%;
 }
+@media screen and (max-width: 480px) {
+  .service_img_left img {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
 .service_img_right {
   clip-path: polygon(5% 0, 100% 0, 100% 100%, 15% 100%);
@@ -1018,6 +1024,12 @@ dd {
 .service_img_right img {
   width: 90%;
   height: 100%;
+}
+@media screen and (max-width: 480px) {
+  .service_img_right img {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .service_ttl {
