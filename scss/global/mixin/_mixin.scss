@@ -1,7 +1,9 @@
 @use "../setting" as *;
 
 @mixin btn {
-	display: inline-block;
+	display: block;
+	width: 15%;
+	margin: 0 auto;
 	background-color: $cDarkBlue;
 	color: $cWhite;
 	font-family: $fBookAntiqua;

@@ -820,7 +820,9 @@ footer {
 }
 @media screen and (max-width: 480px) {
   .about_txt {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5%;
   }
 }
 
@@ -838,26 +840,29 @@ footer {
 }
 
 .about_btn {
-  display: inline-block;
+  display: block;
+  width: 15%;
+  margin: 0 auto;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
+  width: 15%;
+  margin: 0 0 0 55%;
   padding: 1.5% 8%;
-  margin: 0 0 0 58%;
 }
 @media screen and (max-width: 768px) {
   .about_btn {
-    width: 15%;
+    width: 22%;
     font-size: 12px;
   }
 }
 @media screen and (max-width: 768px) and (max-width: 480px) {
   .about_btn {
-    width: 17%;
-    padding: 2% 8%;
-    margin: 0 0 0 35%;
+    width: 20%;
+    margin: 0 auto;
+    padding: 1% 7%;
   }
 }
 
@@ -923,20 +928,23 @@ dd {
 }
 
 .news_btn {
-  display: inline-block;
+  display: block;
+  width: 15%;
+  margin: 0 auto;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
+  margin: 5% auto;
   padding: 1% 5%;
-  margin: 5% 0 0 42%;
 }
 @media screen and (max-width: 480px) {
   .news_btn {
     width: 25%;
-    margin: 5% 0 0 35%;
-    padding: 2% 5%;
+    margin: 5% auto;
+    padding: 1% 7%;
+    text-align: center;
   }
 }
 
@@ -1136,20 +1144,23 @@ dd {
 }
 
 .service_btn {
-  display: inline-block;
+  display: block;
+  width: 15%;
+  margin: 0 auto;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
+  margin: 5% auto;
   padding: 0.8% 3.5%;
-  margin: 5% 0 0 44%;
 }
 @media screen and (max-width: 480px) {
   .service_btn {
-    width: 25%;
-    margin: 5% 0 0 35%;
-    padding: 2% 3.5%;
+    width: 20%;
+    margin: 5% auto;
+    padding: 1% 7%;
+    text-align: center;
   }
 }
 
@@ -1251,19 +1262,31 @@ dd {
 }
 
 .contact_btn {
-  display: inline-block;
+  display: block;
+  width: 15%;
+  margin: 0 auto;
   background-color: #1D4763;
   color: #ffffff;
   font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
-  padding: 0.5% 10%;
-  margin: 0 auto;
+  width: 38%;
+  padding: 0.5% 2%;
   margin-top: 1%;
   border: solid 1px;
   background-color: #ffffff;
   color: #1D4763;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+  .contact_btn {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact_btn {
+    width: 55%;
+  }
 }
 
 .contact_btn:hover {

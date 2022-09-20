@@ -110,7 +110,9 @@
 		line-height: 1.5;
 	}
 	@include sp {
-		width: 100%;
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 5%;
 	}
 }
 
@@ -127,15 +129,16 @@
 
 .about_btn {
 	@include btn;
-  padding: 1.5% 8%;
-	margin: 0 0 0 58%;
-	@include tab {
 		width: 15%;
-		font-size: 12px;
-		@include sp {
-			width: 17%;
-			padding: 2% 8%;
-			margin: 0 0 0 35%;
+		margin: 0 0 0 55%;
+		padding: 1.5% 8%;
+			@include tab {
+				width: 22%;
+				font-size: 12px;
+			@include sp {
+				width: 20%;
+				margin: 0 auto;
+				padding: 1% 7%;
 		}
 	}
 }
@@ -149,8 +152,6 @@
 		color: $cDarkBlue;
 	}
 }
-
-
 
 // newsセクション==============================================
 #news {
@@ -198,13 +199,14 @@ dd {
 
 .news_btn {
 	@include btn;
+	margin: 5% auto;
 	padding: 1% 5%;
-	margin: 5% 0 0 42%;
-	@include sp {
-		width: 25%;
-		margin: 5% 0 0 35%;
-		padding: 2% 5%;
-	}
+		@include sp {
+				width: 25%;
+				margin: 5% auto;
+				padding: 1% 7%;
+				text-align: center;
+		}
 }
 
 .news_btn:hover {
@@ -368,13 +370,14 @@ dd {
 
 .service_btn {
 	@include btn;
+	margin: 5% auto;
 	padding: 0.8% 3.5%;
-	margin: 5% 0 0 44%;
-	@include sp {
-		width: 25%;
-		margin: 5% 0 0 35%;
-		padding: 2% 3.5%;
-	}
+		@include sp {
+			width: 20%;
+			margin: 5% auto;
+			padding: 1% 7%;
+			text-align: center;
+		}
 }
 
 .service_btn:hover {
@@ -462,13 +465,19 @@ dd {
 
 .contact_btn {
 	@include btn;
-	padding: 0.5% 10%;
-	margin: 0 auto;
+	width: 38%;
+	padding: 0.5% 2%;
 	margin-top: 1%;
 	border: solid 1px;
 	background-color: $cWhite;
 	color: $cDarkBlue;
 	letter-spacing: 1px;
+	@include tab{
+		width: 60%;
+	}
+		@include sp{
+			width: 55%;
+		}
 }
 
 .contact_btn:hover {
