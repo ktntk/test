@@ -16,7 +16,7 @@
 .contact_box {
 	display: flex;
 	align-items: center;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 	margin-bottom: 5%;
 	@include tab {
@@ -74,16 +74,14 @@
 
 .contact_btn {
 	@include btn;
-	width: 15%;
-	margin-bottom: 5%;
-	font-size: 18px;
-	@include tab {
-		width: 20%;
-	}
+	padding: 1% 5%;
+	margin: 3% 0 5% 42%;
+	border: solid 1px $cDarkBlue;
+
 	@include sp {
 		width: 30%;
-		margin: 0 0 10% 33%;
-		font-size: 12px;
+		margin: 3% 0 5% 35%;
+		padding: 2% 5%;
 	}
 }
 

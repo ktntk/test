@@ -4,6 +4,7 @@
 // 全体に対して======================================================
 html {
 	font-size: 100%;
+	overflow:auto;
 }
 
 body {
@@ -13,6 +14,8 @@ body {
 	font-family: $fNotoSansJP;
 	letter-spacing: 1px;
 	word-break: normal;
+	overflow: hidden;
+	max-width: 100%;
 
 @include tab {
 		font-size: 14px;
@@ -413,7 +416,9 @@ footer {
 		font-size: 10px;
 		line-height: 2;
 	}
-	ul {
+}
+
+.footer_list ul {
 		width: 100%;
 		margin-right: 15%;
 
@@ -424,6 +429,9 @@ footer {
 			color: $cWhite;
 		}
 	}
+
+.footer_list ul li a:hover{
+	opacity: 0.5;
 }
 
 .copyright {

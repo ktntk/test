@@ -167,6 +167,7 @@ select {
 
 html {
   font-size: 100%;
+  overflow: auto;
 }
 
 body {
@@ -176,6 +177,8 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   letter-spacing: 1px;
   word-break: normal;
+  overflow: hidden;
+  max-width: 100%;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -581,6 +584,7 @@ footer {
     line-height: 2;
   }
 }
+
 .footer_list ul {
   width: 100%;
   margin-right: 15%;
@@ -592,6 +596,10 @@ footer {
 }
 .footer_list ul li a {
   color: #ffffff;
+}
+
+.footer_list ul li a:hover {
+  opacity: 0.5;
 }
 
 .copyright {

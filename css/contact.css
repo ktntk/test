@@ -167,6 +167,7 @@ select {
 
 html {
   font-size: 100%;
+  overflow: auto;
 }
 
 body {
@@ -176,6 +177,8 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   letter-spacing: 1px;
   word-break: normal;
+  overflow: hidden;
+  max-width: 100%;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -581,6 +584,7 @@ footer {
     line-height: 2;
   }
 }
+
 .footer_list ul {
   width: 100%;
   margin-right: 15%;
@@ -592,6 +596,10 @@ footer {
 }
 .footer_list ul li a {
   color: #ffffff;
+}
+
+.footer_list ul li a:hover {
+  opacity: 0.5;
 }
 
 .copyright {
@@ -697,7 +705,7 @@ footer {
 .contact_box {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 5%;
 }
@@ -772,20 +780,15 @@ footer {
   font-family: "Book Antiqua";
   letter-spacing: 5px;
   text-align: center;
-  width: 15%;
-  margin-bottom: 5%;
-  font-size: 18px;
-}
-@media screen and (max-width: 768px) {
-  .contact_btn {
-    width: 20%;
-  }
+  padding: 1% 5%;
+  margin: 3% 0 5% 42%;
+  border: solid 1px #1D4763;
 }
 @media screen and (max-width: 480px) {
   .contact_btn {
     width: 30%;
-    margin: 0 0 10% 33%;
-    font-size: 12px;
+    margin: 3% 0 5% 35%;
+    padding: 2% 5%;
   }
 }
 
